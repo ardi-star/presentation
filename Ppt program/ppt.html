@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materi Umum Tentang LinkedIn</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="background">
+    <div class="gradient"></div>
+  </div>
+
+  <div class="presentation">
+
+    <!-- Logo LinkedIn -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" 
+         alt="LinkedIn Logo" class="logo">
+
+    <!-- Navigasi -->
+    <button class="nav-btn prev">&#10094;</button>
+    <button class="nav-btn next">&#10095;</button>
+
+    <!-- Slide 1 -->
+    <section class="slide active">
+      <h1 class="animate">LinkedIn: Platform Profesional di Dunia Digital</h1>
+      <p class="subtitle animate">Materi Umum tentang LinkedIn</p>
+    </section>
+
+    <!-- Slide 2 -->
+    <section class="slide">
+      <h2 class="animate">Apa itu LinkedIn?</h2>
+      <ul>
+        <li class="animate">LinkedIn adalah media sosial profesional untuk membangun jaringan kerja.</li>
+        <li class="animate">Didirikan tahun 2003 dan kini dimiliki oleh Microsoft.</li>
+        <li class="animate">Berbeda dari media sosial lain karena fokus pada dunia karier dan bisnis.</li>
+      </ul>
+    </section>
+
+    <!-- Slide 3 -->
+    <section class="slide">
+      <h2 class="animate">Tujuan Penggunaan LinkedIn</h2>
+      <ul>
+        <li class="animate">Membangun koneksi profesional.</li>
+        <li class="animate">Mencari atau menawarkan pekerjaan.</li>
+        <li class="animate">Menampilkan profil dan portofolio profesional.</li>
+        <li class="animate">Mengembangkan personal branding.</li>
+      </ul>
+    </section>
+
+    <!-- Slide 4 -->
+    <section class="slide">
+      <h2 class="animate">Fitur Utama LinkedIn</h2>
+      <ul>
+        <li class="animate">Profile – Menampilkan data diri profesional.</li>
+        <li class="animate">Connections – Membangun jaringan kerja.</li>
+        <li class="animate">Jobs – Mencari atau memposting lowongan kerja.</li>
+        <li class="animate">Messaging – Komunikasi profesional.</li>
+        <li class="animate">LinkedIn Learning – Kursus online untuk pengembangan skill.</li>
+      </ul>
+    </section>
+
+    <!-- Slide 5 -->
+    <section class="slide">
+      <h2 class="animate">Manfaat Menggunakan LinkedIn</h2>
+      <ul>
+        <li class="animate">Memperluas jaringan dan peluang karier.</li>
+        <li class="animate">Meningkatkan citra profesional.</li>
+        <li class="animate">Menjadi portofolio digital.</li>
+        <li class="animate">Membuka peluang kolaborasi dan bisnis.</li>
+        <li class="animate">Belajar skill baru melalui konten edukatif.</li>
+      </ul>
+    </section>
+
+    <!-- Slide 6 -->
+    <section class="slide">
+      <h2 class="animate">Tips Mengoptimalkan Akun LinkedIn</h2>
+      <ul>
+        <li class="animate">Gunakan foto profil profesional.</li>
+        <li class="animate">Tulis headline yang menarik.</li>
+        <li class="animate">Buat ringkasan singkat dan padat.</li>
+        <li class="animate">Tambahkan skill & pengalaman relevan.</li>
+        <li class="animate">Aktif berinteraksi dengan konten positif.</li>
+      </ul>
+    </section>
+
+    <!-- Slide 7 -->
+    <section class="slide">
+      <h2 class="animate">Kesimpulan</h2>
+      <p class="animate">LinkedIn bukan hanya media sosial, tetapi alat penting untuk karier profesional.</p>
+      <p class="animate">Gunakan LinkedIn secara aktif untuk membangun reputasi dan memperluas peluang kerja.</p>
+      <p class="animate"><strong>Bangun koneksi, tunjukkan kemampuan, dan jadilah versi terbaik dari dirimu!</strong></p>
+    </section>
+
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[index].classList.add('active');
+
+      const items = slides[index].querySelectorAll('.animate');
+      items.forEach((item, i) => {
+        setTimeout(() => item.classList.add('show'), i * 300);
+      });
+    }
+
+    nextBtn.addEventListener('click', () => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    });
+
+    prevBtn.addEventListener('click', () => {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextBtn.click();
+      if (e.key === 'ArrowLeft') prevBtn.click();
+    });
+
+    // tampilkan animasi awal
+    showSlide(0);
+  </script>
+
+</body>
+</html>
